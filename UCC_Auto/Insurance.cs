@@ -58,9 +58,19 @@ namespace UCC_Auto
             }
         }
 
+        public void displayInsuranceInfo()
+        {
+            Console.Write("\nCompany:{0} ", company);
+            Console.Write("\nLocation:{0} ", base.getLocation());
+            Console.Write("\nManager:{0} ", base.getManager());
+            Console.Write("\nPremium:{0} ", this.premium);
+            Console.Write("\nPayment:{0} ", this.payment);
+            Console.Write("\nBalance:{0} ", this.getBalance());
+        }
+
         public void Pay(double amount)
         {
-            //increase the employee’s payment  here
+            payment += amount;
 
         }
 
@@ -84,11 +94,15 @@ namespace UCC_Auto
             return amtOwed;
         }
 
+        public double getPremium()
+        {
+            return this.premium;
+        }
 
         ~Insurance()
         {
             Console.WriteLine("Insurance closes");
-        }  
+        }
 
     }
 }

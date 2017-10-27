@@ -13,7 +13,6 @@ namespace UCC_Auto
         private string lastName;
         private double annualSalary;
         private int age;
-        private int retirementYear;
         private Insurance insurance;
 
         public Employee()
@@ -55,7 +54,7 @@ namespace UCC_Auto
             Console.Write("\n Enter insurance company location: ");
             string location = Console.ReadLine();
 
-            this.insurance = new Insurance(companyName, 0, payment, location, manager);
+            this.insurance = new Insurance(companyName, 0, 0, location, manager);
             this.insurance.setPremium(this.age, this.annualSalary);
             this.insurance.Pay(payment);
         }
@@ -65,20 +64,19 @@ namespace UCC_Auto
         {
             //Display employee details
             Console.Write("\nEmployee ID:{0} ", idNumber);
-            Console.Write("Employee first name:{0} ", firstName);
-            Console.Write("Employee last name:{0} ", lastName);
-            Console.Write("Employee age:{0} ", age);
-            Console.Write("Employee retirement year:{0} ", retirementYear);
-            Console.Write("Employee payment balance:{0} ", insurance.getBalance());
-            Console.Write("\nInsurance information:{0} ", this.getInsurance());
-
+            Console.Write("\nEmployee first name:{0} ", firstName);
+            Console.Write("\nEmployee last name:{0} ", lastName);
+            Console.Write("\nEmployee age:{0} ", this.age);
+            Console.Write("\nEmployee retirement year:{0} ", Retirement());
+            Console.Write("\nInsurance Info");
+            this.insurance.displayInsuranceInfo();
         }
 
         public int Retirement()
         {
             //Calculate year of retirement
             int currentYear = 2017;
-            int retirementYear = (65 - age) + currentYear;
+            int retirementYear = (65 - this.age) + currentYear;
 
             return retirementYear;
         }

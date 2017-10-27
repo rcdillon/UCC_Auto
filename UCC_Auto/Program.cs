@@ -17,17 +17,18 @@ namespace UCC_Auto
 
             employee.displayStaffInfo();
 
-            employee.getInsurance().Pay(amount:18000);
+            employee.getInsurance().Pay(18000);
+
             employee.displayStaffInfo();
 
-            int count = 1;
-            while (count <= 4)
-            {
-                Employee e = new Employee();
-                e.getData();
-                e.displayStaffInfo();
-                count++;
-            }
+            //int count = 1;
+            //while (count <= 4)
+            //{
+            //    Employee e = new Employee();
+            //    e.getData();
+            //    e.displayStaffInfo();
+            //    count++;
+            //}
 
             Console.ReadKey();
         }
