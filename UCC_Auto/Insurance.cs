@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace UCC_Auto
 {
+    //Insurance inherits from class Business
     public class Insurance : Business
     {
         private string company;
@@ -13,6 +14,7 @@ namespace UCC_Auto
         private double payment;
 
 
+        //Default/non-parameterized Constructor
         public Insurance()
         {
             this.company = "no name";
@@ -22,6 +24,7 @@ namespace UCC_Auto
             base.setManager("unknown");
         }
 
+        //Parameterized Constructor
         public Insurance(string company, double premium, double payment, string location, string manager)
         {
             this.company = company;
@@ -31,7 +34,7 @@ namespace UCC_Auto
             base.setManager(manager);
         }
 
-
+        //Set Premium method that accepts two parameters
         public void setPremium(int employeeAge, double annualSalary)
         {
 
@@ -58,6 +61,7 @@ namespace UCC_Auto
             }
         }
 
+        //This method prints the Insurance details
         public void displayInsuranceInfo()
         {
             Console.Write("\nCompany:{0} ", company);
@@ -65,15 +69,17 @@ namespace UCC_Auto
             Console.Write("\nManager:{0} ", base.getManager());
             Console.Write("\nPremium:{0} ", this.premium);
             Console.Write("\nPayment:{0} ", this.payment);
-            Console.Write("\nBalance:{0} ", this.getBalance());
+            Console.Write("\nBalance:{0} \n", this.getBalance());
         }
 
+        //Pay method that accepts amout paid and increases the employee's payment
         public void Pay(double amount)
         {
             payment += amount;
 
         }
 
+        //Setter Methods
         public void setCompany(string company)
         {
             this.company = company;
@@ -84,6 +90,8 @@ namespace UCC_Auto
             this.payment = payment;
         }
 
+        //Getter Methods
+        //getBalance() return amount awed based on the payment and premium
         public double getBalance()
         {
             double amtOwed = premium - payment;
@@ -99,6 +107,7 @@ namespace UCC_Auto
             return this.premium;
         }
 
+        //Destructor
         ~Insurance()
         {
             Console.WriteLine("Insurance closes");

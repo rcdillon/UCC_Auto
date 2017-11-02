@@ -8,14 +8,17 @@ namespace UCC_Auto
 {
     public class Business
     {
+        //Data members
         private string location;
         private string manager;
 
+        //Default Construtor
         public Business()
         {
 
         }
         
+        //Getter methods
         public string getLocation()
         {
             return location;
@@ -26,6 +29,8 @@ namespace UCC_Auto
             return manager;
         }
 
+
+        //Setter methods
         public void setLocation(string location)
         {
             this.location = location;
